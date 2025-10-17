@@ -2,13 +2,8 @@
 
 namespace App\Domain\TaskWorklogs;
 
-use Illuminate\Database\Eloquent\Model;
-use App\Domain\Traits\TenantScope;
-use App\Domain\Traits\BelongsToTenant;
+use App\Domain\TenantModel;
 
-class TaskWorklog extends Model
+class TaskWorklog extends TenantModel
 {
-    protected $guarded = [];
-    \n    use \\App\\Domain\\Traits\\BelongsToTenant;\n    protected static function booted(){ static::addGlobalScope(new \\App\\Domain\\Traits\\TenantScope); }
-    
 }
