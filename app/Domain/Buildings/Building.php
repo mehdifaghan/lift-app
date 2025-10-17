@@ -2,13 +2,8 @@
 
 namespace App\Domain\Buildings;
 
-use Illuminate\Database\Eloquent\Model;
-use App\Domain\Traits\TenantScope;
-use App\Domain\Traits\BelongsToTenant;
+use App\Domain\TenantModel;
 
-class Building extends Model
+class Building extends TenantModel
 {
-    protected $guarded = [];
-    \n    use \\App\\Domain\\Traits\\BelongsToTenant;\n    protected static function booted(){ static::addGlobalScope(new \\App\\Domain\\Traits\\TenantScope); }
-    
 }

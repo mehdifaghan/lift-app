@@ -28,6 +28,7 @@ class TwoFactorService {
       'code_hash' => Hash::make($code),
       'expires_at' => now()->addMinutes($ttl),
       'max_attempts' => $max,
+      'attempts' => 0,
       'ip' => $ip,
       'user_agent' => mb_substr((string)$ua, 0, 255),
     ]);

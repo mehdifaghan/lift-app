@@ -2,9 +2,8 @@
 
 namespace App\Domain\SystemLogs;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Domain\TenantModel;
 
-class SystemLog extends Model
+class SystemLog extends TenantModel
 {
-    protected $guarded = [];
 }

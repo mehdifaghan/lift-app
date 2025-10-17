@@ -59,7 +59,7 @@ Route::prefix('auth')->group(function () {
 
     // ✅ مرحله 1: ایمیل/رمز (+ کپچا)
     // - اگر SMS غیرفعال باشد → توکن را برمی‌گرداند
-    // - اگر SMS فعال باشد → status:"challenge_required" + challenge_id
+    // - اگر SMS فعال باشد → requires_two_factor:true + challenge_id
     Route::post('/login', [AuthController::class, 'login'])
         ->name('auth.login')
         ->middleware('throttle:10,1');

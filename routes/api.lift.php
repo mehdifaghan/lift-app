@@ -69,7 +69,7 @@ Route::prefix('auth')->group(function () {
         ->name('auth.login.options')
         ->middleware('throttle:60,1');
 
-    // Step 1: email/password (+captcha). If SMS enabled => challenge_required
+    // Step 1: email/password (+captcha). If SMS enabled => requires_two_factor + challenge_id
     Route::post('/login', [AuthController::class, 'login'])
         ->name('auth.login')
         ->middleware('throttle:10,1');
