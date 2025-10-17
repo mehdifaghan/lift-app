@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: Lift SaaS API
+  version: 1.0.0
+servers:
+  - url: http://localhost/api
+paths:
+  /healthz:
+    get:
+      summary: Healthcheck
+      responses:
+        '200':
+          description: OK
+  /auth/login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email: { type: string }
+                password: { type: string }
+      responses:
+        '200':
+          description: Tokens
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: { type: string }
+                  refresh_token: { type: string }
